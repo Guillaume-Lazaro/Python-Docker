@@ -9,7 +9,7 @@ RUN apk add --update --no-cache \
 
 # FROM python:3.8
 COPY requirements.txt .
-COPY app /app
+COPY app /app/
 ADD script.py /
 
 RUN pip3 install -r requirements.txt

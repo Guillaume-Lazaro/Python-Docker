@@ -1,11 +1,11 @@
 import sys, os
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
 @app.route("/")
 def helloBg():
-    return "hello BG"
+    return render_template("index.html")
 
 @app.route('/ma_route/<name>')
 def displayVar(name):
