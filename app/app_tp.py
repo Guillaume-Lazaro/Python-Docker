@@ -28,10 +28,18 @@ books_json = json.dumps(books)
 def displayBooks():
     return books_json
 
-@app.route("/api/books/<id>")
-def displayBook(id):
+@app.route("/api/books/id/<id>")
+def getBookFromId(id):
     index = int(id)
     return books[index]
+
+@app.route("/api/books/title/<title>")
+def getBookFromTitle(title):
+    for item in books:
+        if item['titre'] == title:
+            return item
+
+    return "Aucun livre de ce titre la"
 
 if __name__ == "__main__":
     print("Hello")
