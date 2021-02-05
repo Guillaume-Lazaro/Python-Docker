@@ -7,3 +7,4 @@ COPY fichier_à_copier dossier
 ADD fichier_à_ajouter dossier
 RUN commandes paramétres
 
+##
