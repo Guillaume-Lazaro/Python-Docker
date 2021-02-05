@@ -1,4 +1,5 @@
 FROM alpine
+EXPOSE 5000
 RUN apk add --update --no-cache \
     python3 \
     py3-pip \
