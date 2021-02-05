@@ -11,18 +11,22 @@ def helloBg():
 def displayVar(name):
     return name
 
-# instanciation
-books = [
-	{
-		'id':1,
-		'titre' : 'un titre',
-	},
-	{
-		'id':2,
-		'titre': 'un autre titre random',
-	}
-]
-books_json = json.dumps(books)
+# instanciation (TP avant le books.json)
+# books = [
+# 	{
+# 		'id':1,
+# 		'titre' : 'un titre',
+# 	},
+# 	{
+# 		'id':2,
+# 		'titre': 'un autre titre random',
+# 	}
+# ]
+# books_json = json.dumps(books)
+
+# récuperation de books.json
+with open("./app/books.json") as books_json:
+    books = json.load(books_json)
 
 @app.route("/api/books")
 def displayBooks():
@@ -36,7 +40,8 @@ def getBookFromId(id):
 @app.route("/api/books/title/<title>")
 def getBookFromTitle(title):
     for item in books:
-        if item['titre'] == title:
+        # titre pour le tableau au dessus, title pour le fichier json
+        if item['title'] == title:
             return item
 
     return "Aucun livre de ce titre la"
