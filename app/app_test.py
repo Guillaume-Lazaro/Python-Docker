@@ -7,7 +7,7 @@ app = Flask(__name__)
 def helloBg():
     return render_template("index.html")
 
-@app.route('/ma_route/<name>')
+@app.route("/ma_route/<name>")
 def displayVar(name):
     return name
 
